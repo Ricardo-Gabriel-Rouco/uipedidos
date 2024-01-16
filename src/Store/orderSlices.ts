@@ -1,5 +1,12 @@
-import { TOrder } from "../Utils/Types"
-export const createOrderSlice = (set: any) => ({
+import { create } from "zustand";
+import { TOrder } from "../Utils/Types";
+
+type OrderStoreType = {
+  orders: TOrder[];
+  setOrders: (allOrders: TOrder[]) => void;
+};
+
+export const orderStore = create<OrderStoreType>((set) => ({
   orders: [],
-  setOrders: (allOrders:[TOrder]) => set((state: any) => ({orders: [...state.orders, allOrders] }))
-})
+  setOrders: (allOrders) => set((state) => ({ orders: [...state.orders, ...allOrders] })),
+}));

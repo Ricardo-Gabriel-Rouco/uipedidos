@@ -3,8 +3,17 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import {useRouter} from 'next/navigation'
+import { userStore } from "@/Store/userSlices";
+import {TUserCred} from '@/Utils/Types'
 import styles from "./LoginForm.module.css";
+
 export default function LoginForm() {
+
+  const router = useRouter()
+
+  const { setCurrentUser, currentUser } = userStore();
+
   const [sessionData, setSessionData] = useState({
     userName: "",
     password: "",
@@ -16,7 +25,15 @@ export default function LoginForm() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(sessionData);
+    const fakeCred: TUserCred = {
+      userName: sessionData.userName,
+      password: sessionData.password,
+      token: "faketoken"
+    }
+    setCurrentUser(fakeCred)
+    if(currentUser) {
+      router.push('/main')
+    }
   };
 
   return (
