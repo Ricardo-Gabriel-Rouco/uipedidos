@@ -1,3 +1,4 @@
+
 export const stateOrderObject = {
     Pendiente: "Pendiente",
     Embolsado: "Embolsado",
@@ -10,3 +11,9 @@ export const stateOrderObject = {
     Desarmado: "Desarmado",
     Nuevo: "Nuevo",
   }
+
+export const noticesObject = {
+  Mail: "Mail",
+  Phone: "Phone",
+  Wpp: "Wpp"
+}

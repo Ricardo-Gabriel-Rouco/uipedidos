@@ -61,12 +61,12 @@ export enum noticesType {
 
 export interface TOrder {
   id: number,
-  isbn?: number,
+  isbn?: number | null,
   title: string
-  url?: string
-  state: stateOrder
-  notice?: noticesType
-  comment?: string
+  url?: string | null
+  state: stateOrder | ''
+  notice?: noticesType | ''
+  comment?: string | null
 }
 
 export type TNewOrder = Omit<TOrder, 'id'>

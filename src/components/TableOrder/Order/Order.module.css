@@ -1,0 +1,47 @@
+.Pendiente {
+  background-color: chocolate;
+}
+
+.Embolsado{
+  background-color: red;
+}
+
+.Nd {
+  background-color: greenyellow;
+}
+
+.Retirado {
+  background-color: yellow;
+}
+
+.Nvm {
+  background-color: green;
+}
+  
+.Desarmar {
+  background-color: violet;
+}
+
+.Nlq {
+  background-color: lightslategrey;
+}
+
+.BajaNd {
+  background-color: darkgreen;
+}
+
+.Desarmado {
+  background-color: cyan;
+}
+
+.Nuevo {
+  background-color: antiquewhite;
+}
+
+.stateSelect {
+  background-color: transparent;
+}
+
+.noticeSelect {
+  background-color: transparent;
+}

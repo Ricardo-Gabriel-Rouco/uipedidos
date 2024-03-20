@@ -3,16 +3,15 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import {useRouter} from 'next/navigation'
+import { useRouter } from "next/navigation";
 import { userStore } from "@/Store/userSlices";
-import {TUserCred} from '@/Utils/Types'
+import { TUserCred } from "@/Utils/Types";
 import styles from "./LoginForm.module.css";
 
 export default function LoginForm() {
+  const router = useRouter();
 
-  const router = useRouter()
-
-  const { setCurrentUser, currentUser } = userStore();
+  const { setCurrentUser, currentUser, error } = userStore();
 
   const [sessionData, setSessionData] = useState({
     userName: "",
@@ -28,11 +27,13 @@ export default function LoginForm() {
     const fakeCred: TUserCred = {
       userName: sessionData.userName,
       password: sessionData.password,
-      token: "faketoken"
+    };
+    setCurrentUser(fakeCred);
+    if(error) {
+      alert(error)
     }
-    setCurrentUser(fakeCred)
-    if(currentUser) {
-      router.push('/main')
+    if (currentUser) {
+      router.push("/main");
     }
   };
 

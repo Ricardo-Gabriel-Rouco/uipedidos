@@ -5,18 +5,15 @@ import MainDisplay from "../../app/main/page";
 import { TUserCred } from "@/Utils/Types";
 
 export default function Landing() {
-  const [cred, setCred] = useState<TUserCred>({});
-  const storedUserCred = localStorage.getItem("currentUser");
+  const [cred, setCred] = useState<TUserCred | null>(null);
+  // const storedUserCred = localStorage.getItem("currentUser");
 
   useEffect(() => {
   
+    const storedUserCred = window.localStorage.getItem('currentUser');
     if (storedUserCred) {
-      try {
-        const userCred = JSON.parse(storedUserCred);
-        setCred(userCred);
-      } catch (error) {
-        console.error("Error parsing stored user credentials:", error);
-      }
+      const parsedUserCred: TUserCred = JSON.parse(storedUserCred);
+      setCred(parsedUserCred);
     }
   }, []);
 
