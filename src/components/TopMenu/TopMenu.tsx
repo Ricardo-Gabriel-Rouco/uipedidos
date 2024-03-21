@@ -40,8 +40,8 @@ export default function TopMenu() {
   ];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.options}>
+    <div className="flex flex-row justify-between py-4 ">
+      <div className="flex pl-8 gap-2">
         {options.map((option, index) => (
           <TooltipProvider key={index}>
             <Tooltip>
@@ -57,11 +57,11 @@ export default function TopMenu() {
           </TooltipProvider>
         ))}
       </div>
-      <div className={styles.user}>
+      <div className="flex flex-row items-center pr-8">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button className={styles.userButton} onClick={closeSession}>
+              <Button className="gap-2 text-2xl" onClick={closeSession}>
                 <GrUser size={30} />
                 {onlyName}
               </Button>

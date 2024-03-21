@@ -29,7 +29,7 @@ export default function Order({ order }: any) {
         <select
           value={state}
           onChange={(e) => changeState(e)}
-          className={styles.stateSelect}
+          className={styles[state]}
         >
           {Object.keys(stateOrderObject).map((key) => (
             <option key={key} value={key}>

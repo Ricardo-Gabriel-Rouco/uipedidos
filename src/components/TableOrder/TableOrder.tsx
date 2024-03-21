@@ -32,7 +32,7 @@ const testArray = [
     id: 3,
     isbn: 789012,
     title: "Book 3",
-    state: "Pending",
+    state: "Pendiente",
     comment: "Waiting for confirmation",
     customer: "Bob Johnson",
   },
@@ -41,7 +41,7 @@ const testArray = [
     isbn: 345678,
     title: "Book 4",
     url: "https://example.com/book4",
-    state: "Delivered",
+    state: "Pendiente",
     notice: "On time",
     comment: "Excellent service",
     customer: "Eva Williams",
@@ -50,7 +50,7 @@ const testArray = [
     id: 5,
     isbn: 345678,
     title: "Book 5",
-    state: "Processing",
+    state: "Pendiente",
     notice: "Out of stock",
     comment: "Will be shipped soon",
     customer: "Charlie Brown",
@@ -60,7 +60,7 @@ const testArray = [
     isbn: 901234,
     title: "Book 6",
     url: "https://example.com/book6",
-    state: "Cancelled",
+    state: "Pendiente",
     notice: "Cancelled by user",
     comment: "Order cancelled",
     customer: "Grace Davis",
@@ -69,7 +69,7 @@ const testArray = [
     id: 7,
     isbn: 345678,
     title: "Book 7",
-    state: "Shipped",
+    state: "Pendiente",
     comment: "En route to destination",
     customer: "Frank Wilson",
   },
@@ -78,7 +78,7 @@ const testArray = [
     isbn: 567890,
     title: "Book 8",
     url: "https://example.com/book8",
-    state: "Pending",
+    state: "Pendiente",
     notice: "None",
     comment: "Awaiting confirmation",
     customer: "Helen Miller",
@@ -88,7 +88,7 @@ const testArray = [
     isbn: 123987,
     title: "Book 9",
     url: "https://example.com/book9",
-    state: "Delivered",
+    state: "Pendiente",
     notice: "On time",
     comment: "Satisfied customer",
     customer: "David Lee",
@@ -97,7 +97,7 @@ const testArray = [
     id: 10,
     title: "Book 10",
     isbn: 567890,
-    state: "Processing",
+    state: "Pendiente",
     comment: "Preparing for shipment",
     customer: "Sophie White",
   },
@@ -108,7 +108,7 @@ export default function TableOrder() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">ID</TableHead>
+          <TableHead className="w-auto">ID</TableHead>
           <TableHead>Customer</TableHead>
           <TableHead>Title</TableHead>
           <TableHead>State</TableHead>
